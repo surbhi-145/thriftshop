@@ -102,6 +102,7 @@ void main()
         login =1;
     }
 
+    //login 
     while(login==0)
     {   
         char id[20];
@@ -116,7 +117,7 @@ void main()
             {
                 if(strcmp(password,users[i].password)==0)
                 {
-                    login==1;
+                    login=1;
                     printf("Congratulations! You have successfully logged in!\n");
                 }
             }
@@ -127,7 +128,7 @@ void main()
 
     }
 
-    
+
 }
 
 
