@@ -42,36 +42,47 @@ typedef struct
 } USER;
 
 // Initialization of products database
-PRODUCT prod_list[20] = {{"food", 11, "cadbury", "oreo", 20, "vanilla", 5, "mani&sons", {0, 0, 0}, "20g pack"},
-                         {"food", 12, "quaker", "almonds", 300, "natural", 23, "mani&sons", {0, 0, 0}, "250g"},
-                         {"food", 13, "quaker", "oats", 150, "vanilla", 10, "mani&sons", {0, 0, 0}, "250g"},
-                         {"food", 14, "hersheys", "nutella", 300, "chocolate", 5, "mani&sons", {0, 0, 0}, "250g"},
-                         {"mobiles", 21, "apple", "iphone 11 pro", 90000, "blue", 11, "mango", {0, 0, 0}, 1},
-                         {"mobiles", 22, "google", "pixel 4", 90000, "not all white", 4, "nopixel", {0, 0, 0}, 1},
-                         {"mobiles", 23, "one plus", "one plus", 50000, "black", 50, "oneplusindia", {0, 0, 0}, 1},
-                         {"mobiles", 24, "samsug", "samsung galaxy s10", 80000, "black", 30, "cloudtail", {0, 0, 0}, 1},
-                         {"books", 31, "bloomsbury", "the anarchy", 250, "softbound", 10, "cloudtail", {0, 0, 0}, 1},
-                         {"books", 32, "bloomsburry", "the institute", 700, "hardbound", 3, "anush", {0, 0, 0}, 1},
-                         {"books", 33, "harvil secker", "homo deus", 300, "softbound", 15, "kobo", {0, 0, 0}, 1},
-                         {"books", 34, "random house", "norweign wood", 150, "softbound", 10, "lolo", {0, 0, 0}, 1},
-                         {"men's fashion", 41, "diesel", "tshirt-m", 1000, "black", 7, "shopclues", {0, 0, 0}, 1},
-                         {"men's fashion", 42, "diesel", "shirt", 2000, "blue", 13, "shopnoclues", {0, 0, 0}, 1},
-                         {"men's fashion", 43, "levis", "jeans-m", 2000, "white", 2, "shopclues", {0, 0, 0}, 1},
-                         {"men's fashion", 44, "adidas", "shoes", 5000, "yellow", 20, "dcathlon", {0, 0, 0}, 1},
-                         {"women's fashion", 51, "hnm", "dress", 3000, "black", 7, "myspace", {0, 0, 0}, 1},
-                         {"women's fashion", 52, "hnm", "tshirt-f", 1500, "red", 5, "seezz", {0, 0, 0}, 1},
-                         {"women's fashion", 53, "levis", "jeans-f", 2500, "blue", 4, "myntra", {0, 0, 0}, 1},
-                         {"women's fashion", 54, "forever 21", "jacket", 3000, "yellow", 10, "F21", {0, 0, 0}, 1}};
+PRODUCT prod_list[20] = {{"food", 11, "cadbury", "oreo", 20, "vanilla", 5, "mani&sons", {18, 0, 0}, "20g pack"},
+                         {"food", 12, "quaker", "almonds", 300, "natural", 23, "mani&sons", {270, 0, 0}, "250g"},
+                         {"food", 13, "quaker", "oats", 150, "vanilla", 10, "mani&sons", {135, 0, 0}, "250g"},
+                         {"food", 14, "hersheys", "nutella", 300, "chocolate", 5, "mani&sons", {270, 0, 0}, "250g"},
+                         {"mobiles", 21, "apple", "iphone 11 pro", 90000, "blue", 11, "mango", {81000,100,18000}, 1},
+                         {"mobiles", 22, "google", "pixel 4", 90000, "not all white", 4, "nopixel", {81000,100,18000}, "1"},
+                         {"mobiles", 23, "one plus", "one plus", 50000, "black", 50, "oneplusindia", {45000,100,10000},"1"},
+                         {"mobiles", 24, "samsug", "samsung galaxy s10", 80000, "black", 30, "cloudtail", {72000,100,16000},"1"},
+                         {"books", 31, "bloomsbury", "the anarchy", 250, "softbound", 10, "cloudtail", {225, 0, 0},"1"},
+                         {"books", 32, "bloomsburry", "the institute", 700, "hardbound", 3, "anush", {630, 0, 0},"1"},
+                         {"books", 33, "harvil secker", "homo deus", 300, "softbound", 15, "kobo", {270, 0, 0},"1"},
+                         {"books", 34, "random house", "norweign wood", 150, "softbound", 10, "lolo", {135, 0, 0}, "1"},
+                         {"men's fashion", 41, "diesel", "tshirt-m", 1000, "black", 7, "shopclues", {900,100, 0},"1"},
+                         {"men's fashion", 42, "diesel", "shirt", 2000, "blue", 13, "shopnoclues", {1800, 100, 0},"1"},
+                         {"men's fashion", 43, "levis", "jeans-m", 2000, "white", 2, "shopclues", {1800, 100, 0},"1"},
+                         {"men's fashion", 44, "adidas", "shoes", 5000, "yellow", 20, "dcathlon", {4500, 100, 0},"1"},
+                         {"women's fashion", 51, "hnm", "dress", 3000, "black", 7, "myspace", {0,100, 0},"1"},
+                         {"women's fashion", 52, "hnm", "tshirt-f", 1500, "red", 5, "seezz", {0,100, 0},"1"},
+                         {"women's fashion", 53, "levis", "jeans-f", 2500, "blue", 4, "myntra", {0,100, 0},"1"},
+                         {"women's fashion", 54, "forever 21", "jacket", 3000, "yellow", 10, "F21", {0,100, 0},"1"}};
 
 //Initialization of user database
-USER users[6] = {{"surbhi_145", "123new", "surbhi agrawal", "BPCL colony , Mumbai", {{51, 1, "excellent", 5}}},
-                 {"saumballs", "66669999", "saumya gandhi", "SMGSK, Gurgaon", {{33, 1, "excellent", 4}}},
-                 {"zac", "toocoolboy", "zac efron", "PTSD, Mumbai", {{33, 1, "excellent", 4}, {42, 1, "okayishh", 3}}},
-                 {"shahkhan", "yesno00", "shah rukh khan", "Mannat, Mumbai", {{31, 2, "excellent", 5}}},
-                 {"alia", "okaybye", "alia bhatt", "221B, Baker's Street, Gurgaon", {{21, 1, "the best!", 5}, {12, 1, "good", 3}}}};
+USER users[6] = {{"surbhi_145", "123new", "surbhi agrawal", "BPCL colony , Mumbai", {{11,0,"",0},{12,0,"",0},{13,0,"",0},{14,0,"",0},{21,0,"",0},{22,0,"",0},{23,0,"",0},{24,0,"",0},{31,0,"",0},{32,0,"",0},
+                {33,0,"",0},{33,0,"",0},{34,0,"",0},{41,0,"",0},{42,0,"",0},{43,0,"",0},{44,0,"",0},{51, 1, "excellent", 5},{52,0,"",0},{53,0,"",0},{54,0,"",0}}},
+                 {"saumballs", "66669999", "saumya gandhi", "SMGSK, Gurgaon", {{11,0,"",0},{12,0,"",0},{13,0,"",0},{14,0,"",0},{21,0,"",0},{22,0,"",0},{23,0,"",0},{24,0,"",0},{31,0,"",0},{32,0,"",0},
+                 {33,0,"",0},{33,1,"excellent",4},{34,0,"",0},{41,0,"",0},{42,0,"",0},{43,0,"",0},{44,0,"",0},{51,0,"",0},{52,0,"",0},{53,0,"",0},{54,0,"",0}}},
+                 {"zac", "toocoolboy", "zac efron", "PTSD, Mumbai",{{11,0,"",0},{12,0,"",0},{13,0,"",0},{14,0,"",0},{21,0,"",0},{22,0,"",0},{23,0,"",0},{24,0,"",0},{31,0,"",0},{32,0,"",0},
+                 {33,0,"",0},{33,1,"excellent",4},{34,0,"",0},{41,0,"",0},{42, 1, "okayishh", 3},{43,0,"",0},{44,0,"",0},{51,0,"",0},{52,0,"",0},{53,0,"",0},{54,0,"",0}} },
+                 {"shahkhan", "yesno00", "shah rukh khan", "Mannat, Mumbai", {{11,0,"",0},{12,0,"",0},{13,0,"",0},{14,0,"",0},{21,0,"",0},{22,0,"",0},{23,0,"",0},{24,0,"",0},{31, 2, "excellent", 5},{32,0,"",0},
+                 {33,0,"",0},{33,0,"",0},{34,0,"",0},{41,0,"",0},{42,0,"",0},{43,0,"",0},{44,0,"",0},{51,0,"",0},{52,0,"",0},{53,0,"",0},{54,0,"",0}}},
+                 {"alia", "okaybye", "alia bhatt", "221B, Baker's Street, Gurgaon", {{11,0,"",0},{12, 1, "good", 3},{13,0,"",0},{14,0,"",0},{21, 1, "the best!", 5},{22,0,"",0},{23,0,"",0},{24,0,"",0},{31,0,"",0},{32,0,"",0},
+                 {33,0,"",0},{33,0,"",0},{34,0,"",0},{41,0,"",0},{42,0,"",0},{43,0,"",0},{44,0,"",0},{51,0,"",0},{52,0,"",0},{53,0,"",0},{54,0,"",0}}}};
 
 //required global variables
 int num_users = 5;
+
+//function for purchasing products
+void purchase()
+{
+    
+}
 
 void createHomePage()
 {
