@@ -79,8 +79,91 @@ USER users[6] = {{"surbhi_145", "123new", "surbhi agrawal", "BPCL colony , Mumba
 int num_users = 5;
 
 //function for purchasing products
-void purchase()
+void purchase(int curr_user, int i)
 {
+    printf("This is a summary of the product you wish to buy\n");
+    printf("Category:%s\nProduct Code:%d\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nDealer:%s\nQuantity:%s\n",
+    prod_list[i].category,prod_list[i].ide_code,prod_list[i].brand,prod_list[i].prod_name,prod_list[i].price,prod_list[i].colour,
+    prod_list[i].dealer,prod_list[i].quantity);
+    printf("Here are the available payement offers that you can avail:\n");
+    printf("----------10 perecnt off using SBI----------\nReduced price: Rs.%d\n----------100 Cashback on using Ppay----------\nReduced price: Rs.%d\n----------5 Month EMI----------\nPrice per month: Rs.%d\n",
+    prod_list[i].offers[0],prod_list[i].offers[1],prod_list[i].offers[2]);
+    printf("Please select a Payment method from below:\n");
+    printf("1.SBI card\n2.Ppay\n3.EMI\n4.Cash\n");
+    int pay_option;
+    scanf("%d",&pay_option);
+    system("clear");
+    printf("Congratulations on successful transaction! We will notify you with the time of delivery\n");
+    prod_list[i].stock--;
+    users[curr_user].hist[i].quantity++;
+    printf("Please Enter a review for the purchased product\n");
+    scanf("%s",users[curr_user].hist[i].review);
+    printf("Please Enter a Rate the product out of 5\n");
+    scanf("%d",&users[curr_user].hist[i].rating);
+    printf("Thank you for your feedback\nHere is a list of reccomended products based on your previous purchases\n");
+    printf("---------------------------------------------------------------------------------------\n");
+    int reccomendation_count=0;
+    for(int j=0; j<20; j++)
+    {
+        if(users[curr_user].hist[j].quantity!=0 && j!=i)
+        {
+            reccomendation_count++;
+            printf("Category:%s\nProduct Code:%d\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nDealer:%s\nQuantity:%s\n",
+            prod_list[j].category,prod_list[j].ide_code,prod_list[j].brand,prod_list[j].prod_name,prod_list[j].price,prod_list[j].colour,
+            prod_list[j].dealer,prod_list[j].quantity);
+            printf("---------------------------------------------------------------------------------------\n");
+        }
+
+        if(prod_list[j].brand==prod_list[i].brand && j!=i)
+        {
+            reccomendation_count++;
+            printf("Category:%s\nProduct Code:%d\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nDealer:%s\nQuantity:%s\n",
+            prod_list[j].category,prod_list[j].ide_code,prod_list[j].brand,prod_list[j].prod_name,prod_list[j].price,prod_list[j].colour,
+            prod_list[j].dealer,prod_list[j].quantity);
+            printf("---------------------------------------------------------------------------------------\n");
+        }
+    }
+
+    if(reccomendation_count==0)
+    {
+        for(int j=0; j<20; j++)
+        {
+            if(prod_list[j].category==prod_list[i].category)
+            {
+                 printf("Category:%s\nProduct Code:%d\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nDealer:%s\nQuantity:%s\n",
+            prod_list[j].category,prod_list[j].ide_code,prod_list[j].brand,prod_list[j].prod_name,prod_list[j].price,prod_list[j].colour,
+            prod_list[j].dealer,prod_list[j].quantity);
+            printf("---------------------------------------------------------------------------------------\n");
+
+            }
+        }
+    }
+
+    printf("To continue Further shopping press 1 , to exit press 0\n");
+    int end_option;
+    scanf("%d",&end_option);
+    if(end_option==0)
+    {
+        system("clear");
+        printf("Thank you for shopping with us\n");
+    }
+
+    else
+    {
+        createSearchPage(curr_user);
+    }
+    
+}
+
+void idConverter(int curr_user,int id)
+{
+    for(int i=0; i<20; i++)
+    {
+        if(prod_list[i].ide_code==id)
+        {
+            purchase(curr_user,i);
+        }
+    }
 
 }
 
@@ -111,7 +194,7 @@ void createDispPro(int curr_user)
     }
     else
     {
-        //purchase product
+       purchase(curr_user,op-1);
     }
 }
 
@@ -271,7 +354,7 @@ void createSearchPage(int curr_user)
     }
     else
     {
-        //purchase product
+        idConverter(curr_user,search_match[op-1].ide_code); 
     }
     
 }
