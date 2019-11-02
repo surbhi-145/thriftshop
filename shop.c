@@ -46,34 +46,29 @@ PRODUCT prod_list[20] = {{"food", 11, "cadbury", "oreo", 20, "vanilla", 5, "mani
                          {"food", 12, "quaker", "almonds", 300, "natural", 23, "mani&sons", {270, 0, 0}, "250g"},
                          {"food", 13, "quaker", "oats", 150, "vanilla", 10, "mani&sons", {135, 0, 0}, "250g"},
                          {"food", 14, "hersheys", "nutella", 300, "chocolate", 5, "mani&sons", {270, 0, 0}, "250g"},
-                         {"mobiles", 21, "apple", "iphone 11 pro", 90000, "blue", 11, "mango", {81000,100,18000}, 1},
-                         {"mobiles", 22, "google", "pixel 4", 90000, "not all white", 4, "nopixel", {81000,100,18000}, "1"},
-                         {"mobiles", 23, "one plus", "one plus", 50000, "black", 50, "oneplusindia", {45000,100,10000},"1"},
-                         {"mobiles", 24, "samsug", "samsung galaxy s10", 80000, "black", 30, "cloudtail", {72000,100,16000},"1"},
-                         {"books", 31, "bloomsbury", "the anarchy", 250, "softbound", 10, "cloudtail", {225, 0, 0},"1"},
-                         {"books", 32, "bloomsburry", "the institute", 700, "hardbound", 3, "anush", {630, 0, 0},"1"},
-                         {"books", 33, "harvil secker", "homo deus", 300, "softbound", 15, "kobo", {270, 0, 0},"1"},
+                         {"mobiles", 21, "apple", "iphone 11 pro", 90000, "blue", 11, "mango", {81000, 100, 18000}, 1},
+                         {"mobiles", 22, "google", "pixel 4", 90000, "not all white", 4, "nopixel", {81000, 100, 18000}, "1"},
+                         {"mobiles", 23, "one plus", "one plus", 50000, "black", 50, "oneplusindia", {45000, 100, 10000}, "1"},
+                         {"mobiles", 24, "samsug", "samsung galaxy s10", 80000, "black", 30, "cloudtail", {72000, 100, 16000}, "1"},
+                         {"books", 31, "bloomsbury", "the anarchy", 250, "softbound", 10, "cloudtail", {225, 0, 0}, "1"},
+                         {"books", 32, "bloomsburry", "the institute", 700, "hardbound", 3, "anush", {630, 0, 0}, "1"},
+                         {"books", 33, "harvil secker", "homo deus", 300, "softbound", 15, "kobo", {270, 0, 0}, "1"},
                          {"books", 34, "random house", "norweign wood", 150, "softbound", 10, "lolo", {135, 0, 0}, "1"},
-                         {"men's fashion", 41, "diesel", "tshirt-m", 1000, "black", 7, "shopclues", {900,100, 0},"1"},
-                         {"men's fashion", 42, "diesel", "shirt", 2000, "blue", 13, "shopnoclues", {1800, 100, 0},"1"},
-                         {"men's fashion", 43, "levis", "jeans-m", 2000, "white", 2, "shopclues", {1800, 100, 0},"1"},
-                         {"men's fashion", 44, "adidas", "shoes", 5000, "yellow", 20, "dcathlon", {4500, 100, 0},"1"},
-                         {"women's fashion", 51, "hnm", "dress", 3000, "black", 7, "myspace", {0,100, 0},"1"},
-                         {"women's fashion", 52, "hnm", "tshirt-f", 1500, "red", 5, "seezz", {0,100, 0},"1"},
-                         {"women's fashion", 53, "levis", "jeans-f", 2500, "blue", 4, "myntra", {0,100, 0},"1"},
-                         {"women's fashion", 54, "forever 21", "jacket", 3000, "yellow", 10, "F21", {0,100, 0},"1"}};
+                         {"men's fashion", 41, "diesel", "tshirt-m", 1000, "black", 7, "shopclues", {900, 100, 0}, "1"},
+                         {"men's fashion", 42, "diesel", "shirt", 2000, "blue", 13, "shopnoclues", {1800, 100, 0}, "1"},
+                         {"men's fashion", 43, "levis", "jeans-m", 2000, "white", 2, "shopclues", {1800, 100, 0}, "1"},
+                         {"men's fashion", 44, "adidas", "shoes", 5000, "yellow", 20, "dcathlon", {4500, 100, 0}, "1"},
+                         {"women's fashion", 51, "hnm", "dress", 3000, "black", 7, "myspace", {0, 100, 0}, "1"},
+                         {"women's fashion", 52, "hnm", "tshirt-f", 1500, "red", 5, "seezz", {0, 100, 0}, "1"},
+                         {"women's fashion", 53, "levis", "jeans-f", 2500, "blue", 4, "myntra", {0, 100, 0}, "1"},
+                         {"women's fashion", 54, "forever 21", "jacket", 3000, "yellow", 10, "F21", {0, 100, 0}, "1"}};
 
 //Initialization of user database
-USER users[6] = {{"surbhi_145", "123new", "surbhi agrawal", "BPCL colony , Mumbai", {{11,0,"",0},{12,0,"",0},{13,0,"",0},{14,0,"",0},{21,0,"",0},{22,0,"",0},{23,0,"",0},{24,0,"",0},{31,0,"",0},{32,0,"",0},
-                {33,0,"",0},{34,0,"",0},{41,0,"",0},{42,0,"",0},{43,0,"",0},{44,0,"",0},{51, 1, "excellent", 5},{52,0,"",0},{53,0,"",0},{54,0,"",0}}},
-                 {"saumballs", "66669999", "saumya gandhi", "SMGSK, Gurgaon", {{11,0,"",0},{12,0,"",0},{13,0,"",0},{14,0,"",0},{21,0,"",0},{22,0,"",0},{23,0,"",0},{24,0,"",0},{31,0,"",0},{32,0,"",0},
-                 {33,1,"excellent",4},{34,0,"",0},{41,0,"",0},{42,0,"",0},{43,0,"",0},{44,0,"",0},{51,0,"",0},{52,0,"",0},{53,0,"",0},{54,0,"",0}}},
-                 {"zac", "toocoolboy", "zac efron", "PTSD, Mumbai",{{11,0,"",0},{12,0,"",0},{13,0,"",0},{14,0,"",0},{21,0,"",0},{22,0,"",0},{23,0,"",0},{24,0,"",0},{31,0,"",0},{32,0,"",0},
-                 {33,1,"excellent",4},{34,0,"",0},{41,0,"",0},{42, 1, "okayishh", 3},{43,0,"",0},{44,0,"",0},{51,0,"",0},{52,0,"",0},{53,0,"",0},{54,0,"",0}} },
-                 {"shahkhan", "yesno00", "shah rukh khan", "Mannat, Mumbai", {{11,0,"",0},{12,0,"",0},{13,0,"",0},{14,0,"",0},{21,0,"",0},{22,0,"",0},{23,0,"",0},{24,0,"",0},{31, 2, "excellent", 5},{32,0,"",0},
-                 {33,0,"",0},{34,0,"",0},{41,0,"",0},{42,0,"",0},{43,0,"",0},{44,0,"",0},{51,0,"",0},{52,0,"",0},{53,0,"",0},{54,0,"",0}}},
-                 {"alia", "okaybye", "alia bhatt", "221B, Baker's Street, Gurgaon", {{11,0,"",0},{12, 1, "good", 3},{13,0,"",0},{14,0,"",0},{21, 1, "the best!", 5},{22,0,"",0},{23,0,"",0},{24,0,"",0},{31,0,"",0},{32,0,"",0},
-                 {33,0,"",0},{34,0,"",0},{41,0,"",0},{42,0,"",0},{43,0,"",0},{44,0,"",0},{51,0,"",0},{52,0,"",0},{53,0,"",0},{54,0,"",0}}}};
+USER users[6] = {{"surbhi_145", "123new", "surbhi agrawal", "BPCL colony , Mumbai", {{11, 0, "", 0}, {12, 0, "", 0}, {13, 0, "", 0}, {14, 0, "", 0}, {21, 0, "", 0}, {22, 0, "", 0}, {23, 0, "", 0}, {24, 0, "", 0}, {31, 0, "", 0}, {32, 0, "", 0}, {33, 0, "", 0}, {34, 0, "", 0}, {41, 0, "", 0}, {42, 0, "", 0}, {43, 0, "", 0}, {44, 0, "", 0}, {51, 1, "excellent", 5}, {52, 0, "", 0}, {53, 0, "", 0}, {54, 0, "", 0}}},
+                 {"saumballs", "66669999", "saumya gandhi", "SMGSK, Gurgaon", {{11, 0, "", 0}, {12, 0, "", 0}, {13, 0, "", 0}, {14, 0, "", 0}, {21, 0, "", 0}, {22, 0, "", 0}, {23, 0, "", 0}, {24, 0, "", 0}, {31, 0, "", 0}, {32, 0, "", 0}, {33, 1, "excellent", 4}, {34, 0, "", 0}, {41, 0, "", 0}, {42, 0, "", 0}, {43, 0, "", 0}, {44, 0, "", 0}, {51, 0, "", 0}, {52, 0, "", 0}, {53, 0, "", 0}, {54, 0, "", 0}}},
+                 {"zac", "toocoolboy", "zac efron", "PTSD, Mumbai", {{11, 0, "", 0}, {12, 0, "", 0}, {13, 0, "", 0}, {14, 0, "", 0}, {21, 0, "", 0}, {22, 0, "", 0}, {23, 0, "", 0}, {24, 0, "", 0}, {31, 0, "", 0}, {32, 0, "", 0}, {33, 1, "excellent", 4}, {34, 0, "", 0}, {41, 0, "", 0}, {42, 1, "okayishh", 3}, {43, 0, "", 0}, {44, 0, "", 0}, {51, 0, "", 0}, {52, 0, "", 0}, {53, 0, "", 0}, {54, 0, "", 0}}},
+                 {"shahkhan", "yesno00", "shah rukh khan", "Mannat, Mumbai", {{11, 0, "", 0}, {12, 0, "", 0}, {13, 0, "", 0}, {14, 0, "", 0}, {21, 0, "", 0}, {22, 0, "", 0}, {23, 0, "", 0}, {24, 0, "", 0}, {31, 2, "excellent", 5}, {32, 0, "", 0}, {33, 0, "", 0}, {34, 0, "", 0}, {41, 0, "", 0}, {42, 0, "", 0}, {43, 0, "", 0}, {44, 0, "", 0}, {51, 0, "", 0}, {52, 0, "", 0}, {53, 0, "", 0}, {54, 0, "", 0}}},
+                 {"alia", "okaybye", "alia bhatt", "221B, Baker's Street, Gurgaon", {{11, 0, "", 0}, {12, 1, "good", 3}, {13, 0, "", 0}, {14, 0, "", 0}, {21, 1, "the best!", 5}, {22, 0, "", 0}, {23, 0, "", 0}, {24, 0, "", 0}, {31, 0, "", 0}, {32, 0, "", 0}, {33, 0, "", 0}, {34, 0, "", 0}, {41, 0, "", 0}, {42, 0, "", 0}, {43, 0, "", 0}, {44, 0, "", 0}, {51, 0, "", 0}, {52, 0, "", 0}, {53, 0, "", 0}, {54, 0, "", 0}}}};
 
 //required global variables
 int num_users = 5;
@@ -81,68 +76,70 @@ int num_users = 5;
 //function for purchasing products
 void purchase(int curr_user, int i)
 {
+    system("clear");
+    printf("Welcome to the checkout counter, %s\n", users[curr_user].name);
     printf("This is a summary of the product you wish to buy\n");
     printf("Category:%s\nProduct Code:%d\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nDealer:%s\nQuantity:%s\n",
-    prod_list[i].category,prod_list[i].ide_code,prod_list[i].brand,prod_list[i].prod_name,prod_list[i].price,prod_list[i].colour,
-    prod_list[i].dealer,prod_list[i].quantity);
+           prod_list[i].category, prod_list[i].ide_code, prod_list[i].brand, prod_list[i].prod_name, prod_list[i].price, prod_list[i].colour,
+           prod_list[i].dealer, prod_list[i].quantity);
     printf("Here are the available payement offers that you can avail:\n");
     printf("----------10 perecnt off using SBI----------\nReduced price: Rs.%d\n----------100 Cashback on using Ppay----------\nReduced price: Rs.%d\n----------5 Month EMI----------\nPrice per month: Rs.%d\n",
-    prod_list[i].offers[0],prod_list[i].offers[1],prod_list[i].offers[2]);
+           prod_list[i].offers[0], prod_list[i].offers[1], prod_list[i].offers[2]);
     printf("Please select a Payment method from below:\n");
     printf("1.SBI card\n2.Ppay\n3.EMI\n4.Cash\n");
     int pay_option;
-    scanf("%d",&pay_option);
+    scanf("%d", &pay_option);
     system("clear");
     printf("Congratulations on successful transaction! We will notify you with the time of delivery\n");
     prod_list[i].stock--;
     users[curr_user].hist[i].quantity++;
     printf("Please Enter a review for the purchased product\n");
-    scanf("%s",users[curr_user].hist[i].review);
+    while ((getchar()) != '\n');
+    scanf("%[^\n]s",users[curr_user].hist[i].review);
     printf("Please Enter a Rate the product out of 5\n");
-    scanf("%d",&users[curr_user].hist[i].rating);
+    scanf("%d", &users[curr_user].hist[i].rating);
     printf("Thank you for your feedback\nHere is a list of reccomended products based on your previous purchases\n");
     printf("---------------------------------------------------------------------------------------\n");
-    int reccomendation_count=0;
-    for(int j=0; j<20; j++)
+    int reccomendation_count = 0;
+    for (int j = 0; j < 20; j++)
     {
-        if(users[curr_user].hist[j].quantity!=0 && j!=i)
+        if (users[curr_user].hist[j].quantity != 0 && j != i)
         {
             reccomendation_count++;
             printf("Category:%s\nProduct Code:%d\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nDealer:%s\nQuantity:%s\n",
-            prod_list[j].category,prod_list[j].ide_code,prod_list[j].brand,prod_list[j].prod_name,prod_list[j].price,prod_list[j].colour,
-            prod_list[j].dealer,prod_list[j].quantity);
+                   prod_list[j].category, prod_list[j].ide_code, prod_list[j].brand, prod_list[j].prod_name, prod_list[j].price, prod_list[j].colour,
+                   prod_list[j].dealer, prod_list[j].quantity);
             printf("---------------------------------------------------------------------------------------\n");
         }
 
-        if(prod_list[j].brand==prod_list[i].brand && j!=i)
+        if (prod_list[j].brand == prod_list[i].brand && j != i)
         {
             reccomendation_count++;
             printf("Category:%s\nProduct Code:%d\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nDealer:%s\nQuantity:%s\n",
-            prod_list[j].category,prod_list[j].ide_code,prod_list[j].brand,prod_list[j].prod_name,prod_list[j].price,prod_list[j].colour,
-            prod_list[j].dealer,prod_list[j].quantity);
+                   prod_list[j].category, prod_list[j].ide_code, prod_list[j].brand, prod_list[j].prod_name, prod_list[j].price, prod_list[j].colour,
+                   prod_list[j].dealer, prod_list[j].quantity);
             printf("---------------------------------------------------------------------------------------\n");
         }
     }
 
-    if(reccomendation_count==0)
+    if (reccomendation_count == 0)
     {
-        for(int j=0; j<20; j++)
+        for (int j = 0; j < 20; j++)
         {
-            if(prod_list[j].category==prod_list[i].category)
+            if (prod_list[j].category == prod_list[i].category)
             {
-                 printf("Category:%s\nProduct Code:%d\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nDealer:%s\nQuantity:%s\n",
-            prod_list[j].category,prod_list[j].ide_code,prod_list[j].brand,prod_list[j].prod_name,prod_list[j].price,prod_list[j].colour,
-            prod_list[j].dealer,prod_list[j].quantity);
-            printf("---------------------------------------------------------------------------------------\n");
-
+                printf("Category:%s\nProduct Code:%d\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nDealer:%s\nQuantity:%s\n",
+                       prod_list[j].category, prod_list[j].ide_code, prod_list[j].brand, prod_list[j].prod_name, prod_list[j].price, prod_list[j].colour,
+                       prod_list[j].dealer, prod_list[j].quantity);
+                printf("---------------------------------------------------------------------------------------\n");
             }
         }
     }
 
     printf("To continue Further shopping press 1 , to exit press 0\n");
     int end_option;
-    scanf("%d",&end_option);
-    if(end_option==0)
+    scanf("%d", &end_option);
+    if (end_option == 0)
     {
         system("clear");
         printf("Thank you for shopping with us\n");
@@ -152,19 +149,17 @@ void purchase(int curr_user, int i)
     {
         createSearchPage(curr_user);
     }
-    
 }
 
-void idConverter(int curr_user,int id)
+void idConverter(int curr_user, int id)
 {
-    for(int i=0; i<20; i++)
+    for (int i = 0; i < 20; i++)
     {
-        if(prod_list[i].ide_code==id)
+        if (prod_list[i].ide_code == id)
         {
-            purchase(curr_user,i);
+            purchase(curr_user, i);
         }
     }
-
 }
 
 void createHomePage()
@@ -179,10 +174,28 @@ void createDispPro(int curr_user)
     system("clear");
     printf("Welcome to the market, %s\n", users[curr_user].name);
     printf("---------------------------------------------------------------------------------------\n");
-    printf("Sr. No.   Product Name        Brand          %% off using SBI     cashback amount     EMI options\n");
+    printf("Sr. No.   Product Name        Brand          10%% off using SBI   cashback amount     EMI installment\n");
     for (int i = 0; i < 20; i++)
     {
-        printf("%-10d%-20s%-15s%-20d%-20d%d\n", i + 1, prod_list[i].prod_name, prod_list[i].brand, prod_list[i].offers[0], prod_list[i].offers[1], prod_list[i].offers[2]);
+        printf("%-10d%-20s%-15s", i + 1, prod_list[i].prod_name, prod_list[i].brand);
+        if (prod_list[i].offers[0] == 0)
+            printf("-                   ");
+        else
+        {
+            printf("%-20d", prod_list[i].offers[0]);
+        }
+        if (prod_list[i].offers[1] == 0)
+            printf("-                   ");
+        else
+        {
+            printf("%-20d", prod_list[i].price - prod_list[i].offers[1]);
+        }
+        if (prod_list[i].offers[2] == 0)
+            printf("-\n");
+        else
+        {
+            printf("%-20d\n", prod_list[i].offers[2]);
+        }
     }
     printf("---------------------------------------------------------------------------------------\n");
     printf("enter number of the product that you wish to buy. If you wish to go back to previous page, enter 0\n");
@@ -194,7 +207,7 @@ void createDispPro(int curr_user)
     }
     else
     {
-       purchase(curr_user,op-1);
+        purchase(curr_user, op - 1);
     }
 }
 
@@ -218,12 +231,15 @@ int isSubstring(char s1[], char s2[])
         int flag = 1;
         /* For current index i, check for pattern match */
         for (j = 0; ((j < m) && (flag == 1)); j++)
-        {    if (s2[i + j] != s1[j])
-                {flag = 0;}
+        {
+            if (s2[i + j] != s1[j])
+            {
+                flag = 0;
+            }
         }
 
-        if(flag==0)
-        j--;
+        if (flag == 0)
+            j--;
 
         if (j == m)
             flag_main = 1;
@@ -234,7 +250,7 @@ int isSubstring(char s1[], char s2[])
 int partition(PRODUCT arr[], int low, int high)
 {
     int pivot = arr[high].price; // pivot
-    int i = (low - 1);     // Index of smaller element
+    int i = (low - 1);           // Index of smaller element
 
     for (int j = low; j <= high - 1; j++)
     {
@@ -243,15 +259,15 @@ int partition(PRODUCT arr[], int low, int high)
         {
             i++; // increment index of smaller element
             PRODUCT temp;
-            temp=arr[i];
-            arr[i]=arr[j];
-            arr[j]=temp;
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
         }
     }
     PRODUCT t;
-    t=arr[i+1];
-    arr[i+1]=arr[high];
-    arr[high]=t;
+    t = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = t;
     return (i + 1);
 }
 
@@ -284,79 +300,97 @@ void displaySearchMatch(PRODUCT search_match[], int count_matches)
 
 void createSearchPage(int curr_user)
 {
-    system("clear");
-    printf("Welcome to the market, %s\n1.Search by category\n2.Search by product name\n3.Search by colour\n4.Search by brand name\nEnter number according to the type of search required\n", users[curr_user].name);
-    int op;
-    scanf("%d", &op);
-    int count_matches = 0;
-    char search_string[20];
-    PRODUCT search_match[20];
-    if (op == 1)
+    int flag = 0;
+    while (flag == 0)
     {
-        printf("Search by category:");
-        scanf("%s",search_string);
-        for (int i = 0; i < 20; i++)
+        system("clear");
+        printf("Welcome to the market, %s\n1.Search by category\n2.Search by product name\n3.Search by colour\n4.Search by brand name\nEnter number according to the type of search required\n", users[curr_user].name);
+        int op;
+        scanf("%d", &op);
+        int count_matches = 0;
+        char search_string[20];
+        PRODUCT search_match[20];
+        if (op == 1)
         {
-            if (isSubstring(search_string,prod_list[i].category)==1)
+            printf("Search by category:");
+            while ((getchar()) != '\n');
+            scanf("%[^\n]s", search_string);
+            for (int i = 0; i < 20; i++)
             {
-                search_match[count_matches] = prod_list[i];
-                count_matches++;
+                if (isSubstring(search_string, prod_list[i].category) == 1)
+                {
+                    search_match[count_matches] = prod_list[i];
+                    count_matches++;
+                }
+            }
+        }
+        else if (op == 2)
+        {
+            printf("Search by product name:");
+            while ((getchar()) != '\n');
+            scanf("%[^\n]s", search_string);
+            for (int i = 0; i < 20; i++)
+            {
+                if (isSubstring(search_string, prod_list[i].prod_name))
+                {
+                    search_match[count_matches] = prod_list[i];
+                    count_matches++;
+                }
+            }
+        }
+        else if (op == 3)
+        {
+            printf("Search by colour:");
+            while ((getchar()) != '\n');
+            scanf("%[^\n]s", search_string);
+            for (int i = 0; i < 20; i++)
+            {
+                if (isSubstring(search_string, prod_list[i].colour))
+                {
+                    search_match[count_matches] = prod_list[i];
+                    count_matches++;
+                }
+            }
+        }
+        else if (op == 4)
+        {
+            printf("Search by brand name:");
+            while ((getchar()) != '\n');
+            scanf("%[^\n]s", search_string);
+            for (int i = 0; i < 20; i++)
+            {
+                if (isSubstring(search_string, prod_list[i].brand))
+                {
+                    search_match[count_matches] = prod_list[i];
+                    count_matches++;
+                }
+            }
+        }
+
+        if (count_matches == 0)
+        {
+            printf("NO SEARCH RESULTS FOUND\n");
+            //creating delay before screen refreshes
+            for (long long int i = 0; i < 1000000000; i++)
+            {
+            }
+        }
+        else
+        {
+            flag = 1;
+            sort(search_match, 0, count_matches - 1);
+            displaySearchMatch(search_match, count_matches);
+            scanf("%d", &op);
+            if (op == 0)
+            {
+                createMainPage(curr_user);
+            }
+            else
+            {
+                idConverter(curr_user, search_match[op - 1].ide_code);
             }
         }
     }
-    else if (op == 2)
-    {
-        printf("Search by product name:");
-        scanf("%s",search_string);
-        for (int i = 0; i < 20; i++)
-        {
-            if (isSubstring(search_string, prod_list[i].prod_name))
-            {
-                search_match[count_matches] = prod_list[i];
-                count_matches++;
-            }
-        }
-    }
-    else if (op == 3)
-    {
-        printf("Search by colour:");
-        scanf("%s",search_string);
-        for (int i = 0; i < 20; i++)
-        {
-            if (isSubstring(search_string, prod_list[i].colour))
-            {
-                search_match[count_matches] = prod_list[i];
-                count_matches++;
-            }
-        }
-    }
-    else if (op == 4)
-    {
-        printf("Search by brand name:");
-        scanf("%s",search_string);
-        for (int i = 0; i < 20; i++)
-        {
-            if (isSubstring(search_string, prod_list[i].brand))
-            {
-                search_match[count_matches] = prod_list[i];
-                count_matches++;
-            }
-        }
-    }
-    
-//    printf("\n\n--------%d-------\n\n",length(search_string));
-    sort(search_match, 0, count_matches - 1);
-    displaySearchMatch(search_match,count_matches);
-    scanf("%d",&op);
-    if(op==0)
-    {
-        createMainPage(curr_user);
-    }
-    else
-    {
-        idConverter(curr_user,search_match[op-1].ide_code); 
-    }
-    
 }
 
 void createMainPage(int curr_user)
@@ -387,12 +421,15 @@ void createLogInPage()
     //login
     while (login == 0)
     {
+        char tc;
         char id[20];
         char password[20];
-        printf("Please Enter your user id\n");
-        scanf("%s", id);
-        printf("Please Enter your user password\n");
-        scanf("%s", password);
+        printf("Please Enter your user id:");
+        while ((getchar()) != '\n');
+        scanf("%[^\n]s", id);
+        printf("Please Enter your user password:");
+        while ((getchar()) != '\n');
+        scanf("%[^\n]s", password);
         for (int i = 0; i < num_users && login == 0; i++)
         {
             if (strcmp(id, users[i].id) == 0)
@@ -415,13 +452,17 @@ void createSignUpPage()
     //    clrscr();
     system("clear");
     printf("Please Enter your Full Name\n");
-    scanf("%s", users[num_users].name);
+    while ((getchar()) != '\n');    
+    scanf("%[^\n]s", users[num_users].name);
     printf("Please Enter a valid Username\n");
-    scanf("%s", users[num_users].id);
+    while ((getchar()) != '\n');
+    scanf("%[^\n]s", users[num_users].id);
     printf("Please Enter a valid Password\n");
-    scanf("%s", users[num_users].password);
+    while ((getchar()) != '\n');
+    scanf("%[^\n]s", users[num_users].password);
     printf("Please Enter your Address\n");
-    scanf("%s", users[num_users].address);
+    while ((getchar()) != '\n');
+    scanf("%[^\n]s", users[num_users].address);
     num_users++;
     printf("Please select a valid option to continue \n1. continue with this account\n2. sign in to another account\n");
     int option2;
