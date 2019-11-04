@@ -10,18 +10,18 @@
 //#include <conio.h>
 
 //declaration of dealer struct
-typedef struct 
-{   
+typedef struct
+{
     int id;
     char category[20];
     char brand[20];
-}RECCOMENDATION;
+} RECCOMENDATION;
 
-typedef struct 
+typedef struct
 {
     char name[40];
     int quantity;
-}DEALER;
+} DEALER;
 
 //declaration of product structure
 typedef struct
@@ -57,26 +57,26 @@ typedef struct
 } USER;
 
 // Initialization of products database
-PRODUCT prod_list[20] = {{"food", 11, "cadbury", "oreo", 20, "vanilla", 24, {{"mani&sons",5},{"AP&sons",5},{"KOOOL",4},{"bare",2},{"hen",8}}, {18, 0, 0}, "20g pack"},
-                         {"food", 12, "quaker", "almonds", 300, "natural", 24,{{"mani&sons",3},{"AP&sons",8},{"KOOOL",2},{"bare",10},{"hen",1}}, {270, 0, 0}, "250g"},
-                         {"food", 13, "quaker", "oats", 150, "vanilla", 24, {{"mani&sons",5},{"AP&sons",5},{"KOOOL",4},{"bare",2},{"hen",8}}, {135, 0, 0}, "250g"},
-                         {"food", 14, "hersheys", "nutella", 300, "chocolate", 33, {{"mani&sons",5},{"AP&sons",4},{"KOOOL",4},{"bare",9},{"hen",11}}, {270, 0, 0}, "250g"},
-                         {"mobiles", 21, "apple", "iphone 11 pro", 90000, "blue", 24,{{"mango",5},{"Aer",5},{"gvenvhy",4},{"boulder",2},{"heist",8}}, {81000, 100, 18000}, 1},
-                         {"mobiles", 22, "google", "pixel 4", 90000, "not all white", 57, {{"nopixel",8},{"banna",15},{"poltic",14},{"boulder",12},{"heist",8}}, {81000, 100, 18000}, "1"},
-                         {"mobiles", 23, "one plus", "one plus", 50000, "black", 24, {{"oneplusindia",5},{"banna",5},{"poltic",4},{"flipmart",2},{"rakesh electronics",8}}, {45000, 100, 10000}, "1"},
-                         {"mobiles", 24, "samsug", "samsung galaxy s10", 80000, "black", 48, {{"cloudtail",7},{"banna",15},{"applebottle",6},{"flipmart",2},{"rollo",18}}, {72000, 100, 16000}, "1"},
-                         {"books", 31, "bloomsbury", "the anarchy", 250, "softbound", 48, {{"cloudtail",17},{"banna",5},{"applebottle",16},{"flipmart",3},{"rollo",6}}, {225, 0, 0}, "1"},
-                         {"books", 32, "bloomsburry", "the institute", 700, "hardbound", 49, {{"anush",17},{"paperboy",15},{"applebottle",2},{"flipmart",12},{"bakehouse",3}}, {630, 0, 0}, "1"},
-                         {"books", 33, "harvil secker", "homo deus", 300, "softbound", 49, {{"kobo",17},{"paperboy",15},{"applebottle",2},{"flipmart",12},{"bakehouse",3}}, {270, 0, 0}, "1"},
-                         {"books", 34, "random house", "norweign wood", 150, "softbound", 49, {{"lolo",17},{"paperboy",15},{"applebottle",2},{"flipmart",12},{"bakehouse",3}}, {135, 0, 0}, "1"},
-                         {"men's fashion", 41, "diesel", "tshirt-m", 1000, "black", 62, {{"shopclues",30},{"pboy",15},{"applebottle",2},{"flipmart",12},{"nowear",3}}, {900, 100, 0}, "1"},
-                         {"men's fashion", 42, "diesel", "shirt", 2000, "blue", 62, {{"shopclues",30},{"pboy",15},{"applebottle",2},{"flipmart",12},{"nowear",3}}, {1800, 100, 0}, "1"},
-                         {"men's fashion", 43, "levis", "jeans-m", 2000, "white", 62, {{"shopclues",30},{"pboy",15},{"applebottle",2},{"flipmart",12},{"nowear",3}}, {1800, 100, 0}, "1"},
-                         {"men's fashion", 44, "adidas", "shoes", 5000, "yellow", 62, {{"dcathlon",30},{"pboy",15},{"applebottle",2},{"flipmart",12},{"nowear",3}}, {4500, 100, 0}, "1"},
-                         {"women's fashion", 51, "hnm", "dress", 3000, "black", 100, {{"myspace",40},{"dcathlon",30},{"pboy",15},{"flipmart",12},{"nowear",3}}, {0, 100, 0}, "1"},
-                         {"women's fashion", 52, "hnm", "tshirt-f", 1500, "red", 80,{{"seez",20},{"dcathlon",30},{"pboy",15},{"flipmart",12},{"nowear",3}}, {0, 100, 0}, "1"},
-                         {"women's fashion", 53, "levis", "jeans-f", 2500, "blue", 90, {{"myntra",30},{"dcathlon",30},{"pboy",15},{"flipmart",12},{"nowear",3}}, {0, 100, 0}, "1"},
-                         {"women's fashion", 54, "forever 21", "jacket", 3000, "yellow", 110, {{"F21",50},{"dcathlon",30},{"pboy",15},{"flipmart",12},{"nowear",3}}, {0, 100, 0}, "1"}};
+PRODUCT prod_list[20] = {{"food", 11, "cadbury", "oreo", 20, "vanilla", 24, {{"mani&sons", 5}, {"AP&sons", 5}, {"KOOOL", 4}, {"bare", 2}, {"hen", 8}}, {18, 0, 0}, "20g pack"},
+                         {"food", 12, "quaker", "almonds", 300, "natural", 24, {{"mani&sons", 3}, {"AP&sons", 8}, {"KOOOL", 2}, {"bare", 10}, {"hen", 1}}, {270, 0, 0}, "250g"},
+                         {"food", 13, "quaker", "oats", 150, "vanilla", 24, {{"mani&sons", 5}, {"AP&sons", 5}, {"KOOOL", 4}, {"bare", 2}, {"hen", 8}}, {135, 0, 0}, "250g"},
+                         {"food", 14, "hersheys", "nutella", 300, "chocolate", 33, {{"mani&sons", 5}, {"AP&sons", 4}, {"KOOOL", 4}, {"bare", 9}, {"hen", 11}}, {270, 0, 0}, "250g"},
+                         {"mobiles", 21, "apple", "iphone 11 pro", 90000, "blue", 24, {{"mango", 5}, {"Aer", 5}, {"gvenvhy", 4}, {"boulder", 2}, {"heist", 8}}, {81000, 100, 18000}, 1},
+                         {"mobiles", 22, "google", "pixel 4", 90000, "not all white", 57, {{"nopixel", 8}, {"banna", 15}, {"poltic", 14}, {"boulder", 12}, {"heist", 8}}, {81000, 100, 18000}, "1"},
+                         {"mobiles", 23, "one plus", "one plus", 50000, "black", 24, {{"oneplusindia", 5}, {"banna", 5}, {"poltic", 4}, {"flipmart", 2}, {"rakesh electronics", 8}}, {45000, 100, 10000}, "1"},
+                         {"mobiles", 24, "samsug", "samsung galaxy s10", 80000, "black", 48, {{"cloudtail", 7}, {"banna", 15}, {"applebottle", 6}, {"flipmart", 2}, {"rollo", 18}}, {72000, 100, 16000}, "1"},
+                         {"books", 31, "bloomsbury", "the anarchy", 250, "softbound", 48, {{"cloudtail", 17}, {"banna", 5}, {"applebottle", 16}, {"flipmart", 3}, {"rollo", 6}}, {225, 0, 0}, "1"},
+                         {"books", 32, "bloomsburry", "the institute", 700, "hardbound", 49, {{"anush", 17}, {"paperboy", 15}, {"applebottle", 2}, {"flipmart", 12}, {"bakehouse", 3}}, {630, 0, 0}, "1"},
+                         {"books", 33, "harvil secker", "homo deus", 300, "softbound", 49, {{"kobo", 17}, {"paperboy", 15}, {"applebottle", 2}, {"flipmart", 12}, {"bakehouse", 3}}, {270, 0, 0}, "1"},
+                         {"books", 34, "random house", "norweign wood", 150, "softbound", 49, {{"lolo", 17}, {"paperboy", 15}, {"applebottle", 2}, {"flipmart", 12}, {"bakehouse", 3}}, {135, 0, 0}, "1"},
+                         {"men's fashion", 41, "diesel", "tshirt-m", 1000, "black", 62, {{"shopclues", 30}, {"pboy", 15}, {"applebottle", 2}, {"flipmart", 12}, {"nowear", 3}}, {900, 100, 0}, "1"},
+                         {"men's fashion", 42, "diesel", "shirt", 2000, "blue", 62, {{"shopclues", 30}, {"pboy", 15}, {"applebottle", 2}, {"flipmart", 12}, {"nowear", 3}}, {1800, 100, 0}, "1"},
+                         {"men's fashion", 43, "levis", "jeans-m", 2000, "white", 62, {{"shopclues", 30}, {"pboy", 15}, {"applebottle", 2}, {"flipmart", 12}, {"nowear", 3}}, {1800, 100, 0}, "1"},
+                         {"men's fashion", 44, "adidas", "shoes", 5000, "yellow", 62, {{"dcathlon", 30}, {"pboy", 15}, {"applebottle", 2}, {"flipmart", 12}, {"nowear", 3}}, {4500, 100, 0}, "1"},
+                         {"women's fashion", 51, "hnm", "dress", 3000, "black", 100, {{"myspace", 40}, {"dcathlon", 30}, {"pboy", 15}, {"flipmart", 12}, {"nowear", 3}}, {0, 100, 0}, "1"},
+                         {"women's fashion", 52, "hnm", "tshirt-f", 1500, "red", 80, {{"seez", 20}, {"dcathlon", 30}, {"pboy", 15}, {"flipmart", 12}, {"nowear", 3}}, {0, 100, 0}, "1"},
+                         {"women's fashion", 53, "levis", "jeans-f", 2500, "blue", 90, {{"myntra", 30}, {"dcathlon", 30}, {"pboy", 15}, {"flipmart", 12}, {"nowear", 3}}, {0, 100, 0}, "1"},
+                         {"women's fashion", 54, "forever 21", "jacket", 3000, "yellow", 110, {{"F21", 50}, {"dcathlon", 30}, {"pboy", 15}, {"flipmart", 12}, {"nowear", 3}}, {0, 100, 0}, "1"}};
 
 //Initialization of user database
 USER users[6] = {{"surbhi_145", "123new", "surbhi agrawal", "BPCL colony , Mumbai", {{11, 0, "", 0}, {12, 0, "", 0}, {13, 0, "", 0}, {14, 0, "", 0}, {21, 0, "", 0}, {22, 0, "", 0}, {23, 0, "", 0}, {24, 0, "", 0}, {31, 0, "", 0}, {32, 0, "", 0}, {33, 0, "", 0}, {34, 0, "", 0}, {41, 0, "", 0}, {42, 0, "", 0}, {43, 0, "", 0}, {44, 0, "", 0}, {51, 1, "excellent", 5}, {52, 0, "", 0}, {53, 0, "", 0}, {54, 0, "", 0}}},
@@ -91,7 +91,7 @@ int num_users = 5;
 
 //function for reccomendation
 void recommend(int curr_user, int i)
-{   
+{
     system("clear");
     printf("Thank you for your feedback\nHere is a list of reccomended products based on your previous purchases\n");
     printf("---------------------------------------------------------------------------------------\n");
@@ -101,24 +101,23 @@ void recommend(int curr_user, int i)
     for (int j = 0; j < 20; j++)
     {
         if (users[curr_user].hist[j].quantity != 0)
-        {   
-            rec_ar[reccomendation_count].category=prod_list[j].category;
-            rec_ar[reccomendation_count].brand=prod_list[j].brand;
-            rec_ar[reccomendation_count].id=prod_list[j].ide_code;
+        {
+            strcpy(rec_ar[reccomendation_count].category, prod_list[j].category);
+            strcpy(rec_ar[reccomendation_count].brand, prod_list[j].brand);
+            rec_ar[reccomendation_count].id = prod_list[j].ide_code;
             reccomendation_count++;
         }
-
     }
 
-    for(int j=0; j<20; j++)
+    for (int j = 0; j < 20; j++)
     {
-        for(int i=0; i<reccomendation_count; i++)
+        for (int i = 0; i < reccomendation_count; i++)
         {
-            if((prod_list[j].brand==rec_ar[reccomendation_count].brand || prod_list[j].category==rec_ar[reccomendation_count].category) && prod_list[j].ide_code!=rec_ar[reccomendation_count].id)
+            if ((strcmp(prod_list[j].brand, rec_ar[reccomendation_count].brand) || strcmp(prod_list[j].category, rec_ar[reccomendation_count].category)) && prod_list[j].ide_code != rec_ar[reccomendation_count].id)
             {
-                printf("Category:%s\nProduct Code:%d\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nQuantity:%s\n",
-                   prod_list[j].category, prod_list[j].ide_code, prod_list[j].brand, prod_list[j].prod_name, prod_list[j].price,
-                    prod_list[j].colour,prod_list[j].quantity);
+                printf("Category:%s\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nQuantity:%s\navailable stock:%d\n",
+                       prod_list[j].category, prod_list[j].brand, prod_list[j].prod_name, prod_list[j].price,
+                       prod_list[j].colour, prod_list[j].quantity, prod_list[j].stock);
                 printf("---------------------------------------------------------------------------------------\n");
             }
         }
@@ -144,30 +143,73 @@ void purchase(int curr_user, int i)
 {
     printf("Welcome to the checkout counter, %s\n", users[curr_user].name);
     printf("This is a summary of the product you wish to buy\n");
-    printf("Category:%s\nProduct Code:%d\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nDealer:%s\nQuantity:%s\n",
-           prod_list[i].category, prod_list[i].ide_code, prod_list[i].brand, prod_list[i].prod_name, prod_list[i].price, prod_list[i].colour,
-           prod_list[i].dealer[0].name, prod_list[i].quantity);
+    printf("Category:%s\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nQuantity:%s\navailable stock:%d\n",
+           prod_list[i].category, prod_list[i].brand, prod_list[i].prod_name, prod_list[i].price,
+           prod_list[i].colour, prod_list[i].quantity, prod_list[i].stock);
     printf("Enter quantity of the product that you would like to buy\n");
-    int quantity;
-    scanf("%d",&quantity);
-    printf("Here are the available payement offers that you can avail:\n");
-    printf("----------10 perecnt off using SBI----------\nReduced price: Rs.%d\n----------100 Cashback on using Ppay----------\nReduced price: Rs.%d\n----------5 Month EMI----------\nPrice per month: Rs.%d\n",
-           prod_list[i].offers[0]*quantity, prod_list[i].offers[1], prod_list[i].offers[2]*quantity);
-    printf("Please select a Payment method from below:\n");
-    printf("1.SBI card\n2.Ppay\n3.EMI\n4.Cash\n");
-    int pay_option;
-    scanf("%d", &pay_option);
-    system("clear");
-    printf("Congratulations on successful transaction! We will notify you with the time of delivery\n");
-    prod_list[i].stock-=quantity;
-    users[curr_user].hist[i].quantity+=quantity;
-    prod_list[i].dealer[0].quantity-=quantity
-    printf("Please Enter a review for the purchased product\n");
-    while ((getchar()) != '\n');
-    scanf("%[^\n]s",users[curr_user].hist[i].review);
-    printf("Please Enter a Rate the product out of 5\n");
-    scanf("%d", &users[curr_user].hist[i].rating);
-    recommend(curr_user,i);
+    int quantity, flag = 1;
+    scanf("%d", &quantity);
+    if (quantity == 0)
+        flag = 0;
+    while (quantity > prod_list[i].stock && flag == 1)
+    {
+        printf("We only have %d items in stock. Please enter quantity again. Enter 0 if you wish to cancel purchase\n", prod_list[i].stock);
+        scanf("%d", &quantity);
+        if (quantity == 0)
+            flag = 0;
+    }
+    if (flag == 1)
+    {
+        printf("Final cost for Cash On Delivery:%d\n", prod_list[i].price * quantity);
+        printf("Here are the available payement offers that you can avail:\n");
+        if (prod_list[i].offers[0] != 0)
+        {
+            printf("----------10 perecnt off using SBI----------\nReduced price: Rs.%d\n", prod_list[i].offers[0] * quantity);
+        }
+        if (prod_list[i].offers[1] != 0)
+        {
+            printf("----------100 Cashback on using Ppay----------\nReduced price: Rs.%d\n", prod_list[i].price * quantity - 100);
+        }
+        if (prod_list[i].offers[2] != 0)
+        {
+            printf("----------5 Month EMI----------\nPrice per month: Rs.%d\n", prod_list[i].offers[2] * quantity);
+        }
+        printf("Please select a Payment method from below:\n");
+        printf("1.SBI card\n2.Ppay\n3.EMI\n4.Cash\n");
+        int pay_option;
+        scanf("%d", &pay_option);
+        system("clear");
+        printf("Congratulations on successful transaction! We will notify you with the time of delivery\n");
+        prod_list[i].stock -= quantity;
+        users[curr_user].hist[i].quantity += quantity;
+        int deal_count = 0;
+        while (quantity > 0)
+        {
+            if (prod_list[i].dealer[deal_count].quantity >= quantity)
+            {
+                prod_list[i].dealer[deal_count].quantity -= quantity;
+                quantity = 0;
+            }
+            else
+            {
+                quantity -= prod_list[i].dealer[deal_count].quantity;
+                prod_list[i].dealer[deal_count].quantity = 0;
+                deal_count++;
+            }
+        }
+
+        //        prod_list[i].dealer[0].quantity -= quantity
+        printf("Please Enter a review for the purchased product\n");
+        while ((getchar()) != '\n');
+        scanf("%[^\n]s", users[curr_user].hist[i].review);
+        printf("Please Enter a Rate the product out of 5\n");
+        scanf("%d", &users[curr_user].hist[i].rating);
+        recommend(curr_user, i);
+    }
+    else
+    {
+        createMainPage(curr_user);
+    }
 }
 
 void idConverter(int curr_user, int id)
@@ -332,7 +374,8 @@ void createSearchPage(int curr_user)
         if (op == 1)
         {
             printf("Search by category:");
-            while ((getchar()) != '\n');
+            while ((getchar()) != '\n')
+                ;
             scanf("%[^\n]s", search_string);
             for (int i = 0; i < 20; i++)
             {
@@ -346,7 +389,8 @@ void createSearchPage(int curr_user)
         else if (op == 2)
         {
             printf("Search by product name:");
-            while ((getchar()) != '\n');
+            while ((getchar()) != '\n')
+                ;
             scanf("%[^\n]s", search_string);
             for (int i = 0; i < 20; i++)
             {
@@ -360,7 +404,8 @@ void createSearchPage(int curr_user)
         else if (op == 3)
         {
             printf("Search by colour:");
-            while ((getchar()) != '\n');
+            while ((getchar()) != '\n')
+                ;
             scanf("%[^\n]s", search_string);
             for (int i = 0; i < 20; i++)
             {
@@ -374,7 +419,8 @@ void createSearchPage(int curr_user)
         else if (op == 4)
         {
             printf("Search by brand name:");
-            while ((getchar()) != '\n');
+            while ((getchar()) != '\n')
+                ;
             scanf("%[^\n]s", search_string);
             for (int i = 0; i < 20; i++)
             {
@@ -444,10 +490,12 @@ void createLogInPage()
         char id[20];
         char password[20];
         printf("Please Enter your user id:");
-        while ((getchar()) != '\n');
+        while ((getchar()) != '\n')
+            ;
         scanf("%[^\n]s", id);
         printf("Please Enter your user password:");
-        while ((getchar()) != '\n');
+        while ((getchar()) != '\n')
+            ;
         scanf("%[^\n]s", password);
         for (int i = 0; i < num_users && login == 0; i++)
         {
@@ -471,16 +519,20 @@ void createSignUpPage()
     //    clrscr();
     system("clear");
     printf("Please Enter your Full Name\n");
-    while ((getchar()) != '\n');    
+    while ((getchar()) != '\n')
+        ;
     scanf("%[^\n]s", users[num_users].name);
     printf("Please Enter a valid Username\n");
-    while ((getchar()) != '\n');
+    while ((getchar()) != '\n')
+        ;
     scanf("%[^\n]s", users[num_users].id);
     printf("Please Enter a valid Password\n");
-    while ((getchar()) != '\n');
+    while ((getchar()) != '\n')
+        ;
     scanf("%[^\n]s", users[num_users].password);
     printf("Please Enter your Address\n");
-    while ((getchar()) != '\n');
+    while ((getchar()) != '\n')
+        ;
     scanf("%[^\n]s", users[num_users].address);
     num_users++;
     printf("Please select a valid option to continue \n1. continue with this account\n2. sign in to another account\n");
