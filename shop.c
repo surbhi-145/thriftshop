@@ -61,7 +61,7 @@ PRODUCT prod_list[20] = {{"food", 11, "cadbury", "oreo", 20, "vanilla", 24, {{"m
                          {"food", 12, "quaker", "almonds", 300, "natural", 24, {{"mani&sons", 3}, {"AP&sons", 8}, {"KOOOL", 2}, {"bare", 10}, {"hen", 1}}, {270, 0, 0}, "250g"},
                          {"food", 13, "quaker", "oats", 150, "vanilla", 24, {{"mani&sons", 5}, {"AP&sons", 5}, {"KOOOL", 4}, {"bare", 2}, {"hen", 8}}, {135, 0, 0}, "250g"},
                          {"food", 14, "hersheys", "nutella", 300, "chocolate", 33, {{"mani&sons", 5}, {"AP&sons", 4}, {"KOOOL", 4}, {"bare", 9}, {"hen", 11}}, {270, 0, 0}, "250g"},
-                         {"mobiles", 21, "apple", "iphone 11 pro", 90000, "blue", 24, {{"mango", 5}, {"Aer", 5}, {"gvenvhy", 4}, {"boulder", 2}, {"heist", 8}}, {81000, 100, 18000}, 1},
+                         {"mobiles", 21, "apple", "iphone 11 pro", 90000, "blue", 24, {{"mango", 5}, {"Aer", 5}, {"gvenvhy", 4}, {"boulder", 2}, {"heist", 8}}, {81000, 100, 18000}, "1"},
                          {"mobiles", 22, "google", "pixel 4", 90000, "not all white", 57, {{"nopixel", 8}, {"banna", 15}, {"poltic", 14}, {"boulder", 12}, {"heist", 8}}, {81000, 100, 18000}, "1"},
                          {"mobiles", 23, "one plus", "one plus", 50000, "black", 24, {{"oneplusindia", 5}, {"banna", 5}, {"poltic", 4}, {"flipmart", 2}, {"rakesh electronics", 8}}, {45000, 100, 10000}, "1"},
                          {"mobiles", 24, "samsug", "samsung galaxy s10", 80000, "black", 48, {{"cloudtail", 7}, {"banna", 15}, {"applebottle", 6}, {"flipmart", 2}, {"rollo", 18}}, {72000, 100, 16000}, "1"},
@@ -111,14 +111,19 @@ void recommend(int curr_user, int i)
 
     for (int j = 0; j < 20; j++)
     {
-        for (int i = 0; i < reccomendation_count; i++)
+        int recommend_flag=0;
+        for (int i = 0; i < reccomendation_count && recommend_flag==0; i++)
         {
-            if ((strcmp(prod_list[j].brand, rec_ar[reccomendation_count].brand) || strcmp(prod_list[j].category, rec_ar[reccomendation_count].category)) && prod_list[j].ide_code != rec_ar[reccomendation_count].id)
+            if ((strcmp(prod_list[j].brand, rec_ar[i].brand)==0 || strcmp(prod_list[j].category, rec_ar[i].category)==0) && prod_list[j].ide_code != rec_ar[reccomendation_count].id)
             {
-                printf("Category:%s\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nQuantity:%s\navailable stock:%d\n",
+                recommend_flag=1;
+                if(prod_list[j].ide_code!=rec_ar[i].id)
+                {
+                       printf("Category:%s\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nQuantity:%s\navailable stock:%d\n",
                        prod_list[j].category, prod_list[j].brand, prod_list[j].prod_name, prod_list[j].price,
                        prod_list[j].colour, prod_list[j].quantity, prod_list[j].stock);
-                printf("---------------------------------------------------------------------------------------\n");
+                       printf("---------------------------------------------------------------------------------------\n");
+                }
             }
         }
     }
@@ -141,6 +146,7 @@ void recommend(int curr_user, int i)
 //function for purchasing products
 void purchase(int curr_user, int i)
 {
+    system("clear");
     printf("Welcome to the checkout counter, %s\n", users[curr_user].name);
     printf("This is a summary of the product you wish to buy\n");
     printf("Category:%s\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nQuantity:%s\navailable stock:%d\n",
@@ -202,8 +208,22 @@ void purchase(int curr_user, int i)
         printf("Please Enter a review for the purchased product\n");
         while ((getchar()) != '\n');
         scanf("%[^\n]s", users[curr_user].hist[i].review);
-        printf("Please Enter a Rate the product out of 5\n");
-        scanf("%d", &users[curr_user].hist[i].rating);
+
+        int rate=0;
+        while(rate>5 || rate<1)
+        {
+            printf("Please Enter a Rate the product out of 5\n");
+            scanf("%d", &rate);
+            if(rate>5 || rate<1)
+            {
+                printf("Sorry this in an invalid rating. Please enter a rating out of 5.\n");
+            }
+            else
+            {
+                 users[curr_user].hist[i].rating=rate;
+            }
+            
+        }
         recommend(curr_user, i);
     }
     else
@@ -478,6 +498,40 @@ void createMainPage(int curr_user)
     }
 }
 
+int validate(int curr_user)
+{
+    int flag=0;
+    if(strlen(users[curr_user].name)==0 || strcmp(users[curr_user].name,""==0))
+    {
+        flag=1;
+        printf("Please Enter a valid Name\n");
+    }
+    
+    if(strlen(users[curr_user].password)<6)
+    {
+        flag=1;
+        printf("Your password must be atleast 6 characters long. please Enter a valid password.\n");
+    }
+
+    for(int i=0; i<curr_user; i++)
+    {
+        if(strcmp(users[i].id,users[curr_user].id)==0)
+        {
+            flag=1;
+            printf("This username has already been taken. Please Enter another username.\n");
+            i=curr_user;
+        }
+    }
+
+    if(flag==1)
+    {
+        printf("You will have to refill the sign up form.\n");
+        printf("----------------------------------------------------\n");
+    }
+
+    return flag;
+}
+
 void createLogInPage()
 {
     //clrscr();
@@ -516,8 +570,7 @@ void createLogInPage()
 
 void createSignUpPage()
 {
-    //    clrscr();
-    system("clear");
+
     printf("Please Enter your Full Name\n");
     while ((getchar()) != '\n')
         ;
@@ -534,18 +587,28 @@ void createSignUpPage()
     while ((getchar()) != '\n')
         ;
     scanf("%[^\n]s", users[num_users].address);
-    num_users++;
-    printf("Please select a valid option to continue \n1. continue with this account\n2. sign in to another account\n");
-    int option2;
-    scanf("%d", &option2);
-    if (option2 == 1)
+
+    int valid=validate(num_users);
+    if(valid==0)
     {
-        createMainPage(num_users - 1);
+        num_users++;
+        printf("Please select a valid option to continue \n1. continue with this account\n2. sign in to another account\n");
+        int option2;
+        scanf("%d", &option2);
+        if (option2 == 1)
+        {
+            createMainPage(num_users - 1);
+        }
+        else
+        {
+            createLogInPage();
+        }
     }
     else
     {
-        createLogInPage();
+        createSignUpPage();
     }
+    
 }
 
 void main()
@@ -557,6 +620,7 @@ void main()
 
     if (option1 == 2)
     {
+        system("clear");
         createSignUpPage();
     }
     else
