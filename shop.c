@@ -111,18 +111,18 @@ void recommend(int curr_user, int i)
 
     for (int j = 0; j < 20; j++)
     {
-        int recommend_flag=0;
-        for (int i = 0; i < reccomendation_count && recommend_flag==0; i++)
+        int recommend_flag = 0;
+        for (int i = 0; i < reccomendation_count && recommend_flag == 0; i++)
         {
-            if ((strcmp(prod_list[j].brand, rec_ar[i].brand)==0 || strcmp(prod_list[j].category, rec_ar[i].category)==0) && prod_list[j].ide_code != rec_ar[reccomendation_count].id)
+            if ((strcmp(prod_list[j].brand, rec_ar[i].brand) == 0 || strcmp(prod_list[j].category, rec_ar[i].category) == 0) && prod_list[j].ide_code != rec_ar[reccomendation_count].id)
             {
-                recommend_flag=1;
-                if(prod_list[j].ide_code!=rec_ar[i].id)
+                recommend_flag = 1;
+                if (prod_list[j].ide_code != rec_ar[i].id)
                 {
-                       printf("Category:%s\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nQuantity:%s\navailable stock:%d\n",
-                       prod_list[j].category, prod_list[j].brand, prod_list[j].prod_name, prod_list[j].price,
-                       prod_list[j].colour, prod_list[j].quantity, prod_list[j].stock);
-                       printf("---------------------------------------------------------------------------------------\n");
+                    printf("Category:%s\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nQuantity:%s\navailable stock:%d\n",
+                           prod_list[j].category, prod_list[j].brand, prod_list[j].prod_name, prod_list[j].price,
+                           prod_list[j].colour, prod_list[j].quantity, prod_list[j].stock);
+                    printf("---------------------------------------------------------------------------------------\n");
                 }
             }
         }
@@ -206,23 +206,23 @@ void purchase(int curr_user, int i)
 
         //        prod_list[i].dealer[0].quantity -= quantity
         printf("Please Enter a review for the purchased product\n");
-        while ((getchar()) != '\n');
+        while ((getchar()) != '\n')
+            ;
         scanf("%[^\n]s", users[curr_user].hist[i].review);
 
-        int rate=0;
-        while(rate>5 || rate<1)
+        int rate = 0;
+        while (rate > 5 || rate < 1)
         {
             printf("Please Enter a Rate the product out of 5\n");
             scanf("%d", &rate);
-            if(rate>5 || rate<1)
+            if (rate > 5 || rate < 1)
             {
                 printf("Sorry this in an invalid rating. Please enter a rating out of 5.\n");
             }
             else
             {
-                 users[curr_user].hist[i].rating=rate;
+                users[curr_user].hist[i].rating = rate;
             }
-            
         }
         recommend(curr_user, i);
     }
@@ -292,18 +292,10 @@ void createDispPro(int curr_user)
     }
 }
 
-int length(char s[])
-{
-    int count = 0;
-    while (s[count] != '\0')
-        count++;
-    return count;
-}
-
 int isSubstring(char s1[], char s2[])
 {
-    int m = length(s1);
-    int n = length(s2);
+    int m = strlen(s1);
+    int n = strlen(s2);
     int flag_main = 0;
     /* slide one by one */
     for (int i = 0; ((i <= n - m) && (flag_main == 0)); i++)
@@ -367,6 +359,44 @@ void sort(PRODUCT arr[], int lo, int hi)
     }
 }
 
+int dealerPartition(DEALER arr[], int low, int high)
+{
+    int pivot = arr[high].quantity; // pivot
+    int i = (low - 1);              // Index of smaller element
+
+    for (int j = low; j <= high - 1; j++)
+    {
+        // If current element is smaller than the pivot
+        if (arr[j].quantity < pivot)
+        {
+            i++; // increment index of smaller element
+            DEALER temp;
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+    DEALER t;
+    t = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = t;
+    return (i + 1);
+}
+
+void sortDealer(DEALER arr[], int lo, int hi)
+{
+    if (lo < hi)
+    {
+        /* pi is partitioning index, arr[p] is now  
+        at right place */
+        int pi = dealerPartition(arr, lo, hi);
+
+        // Separately sort elements before
+        // partition and after partition
+        sortDealer(arr, lo, pi - 1);
+        sortDealer(arr, pi + 1, hi);
+    }
+}
 void displaySearchMatch(PRODUCT search_match[], int count_matches)
 {
     printf("----------------------------------------------------\n");
@@ -478,10 +508,138 @@ void createSearchPage(int curr_user)
     }
 }
 
+void buyFromDealer(int curr_user, PRODUCT curr_pro, int dealer_id, int quantity)
+{
+    int i = (curr_pro.ide_code % 10) + ((curr_pro.ide_code / 10) - 1) * 4 - 1;
+    system("clear");
+    printf("Welcome to the checkout counter, %s\n", users[curr_user].name);
+    printf("This is a summary of the product you wish to buy\n");
+    printf("Category:%s\nBrand:%s\nProduct Name:%s\nPrice:%d\nColour:%s\nQuantity:%s\nDealer:%s\n",
+           prod_list[i].category, prod_list[i].brand, prod_list[i].prod_name, prod_list[i].price,
+           prod_list[i].colour, prod_list[i].quantity, prod_list[i].dealer[dealer_id].name);
+    printf("Final cost for Cash On Delivery:%d\n", prod_list[i].price * quantity);
+    printf("Here are the available payement offers that you can avail:\n");
+    if (prod_list[i].offers[0] != 0)
+    {
+        printf("----------10 perecnt off using SBI----------\nReduced price: Rs.%d\n", prod_list[i].offers[0] * quantity);
+    }
+    if (prod_list[i].offers[1] != 0)
+    {
+        printf("----------100 Cashback on using Ppay----------\nReduced price: Rs.%d\n", prod_list[i].price * quantity - 100);
+    }
+    if (prod_list[i].offers[2] != 0)
+    {
+        printf("----------5 Month EMI----------\nPrice per month: Rs.%d\n", prod_list[i].offers[2] * quantity);
+    }
+    printf("Please select a Payment method from below:\n");
+    printf("1.SBI card\n2.Ppay\n3.EMI\n4.Cash\n");
+    int pay_option;
+    scanf("%d", &pay_option);
+    system("clear");
+    printf("Congratulations on successful transaction! We will notify you with the time of delivery\n");
+    prod_list[i].stock -= quantity;
+    users[curr_user].hist[i].quantity += quantity;
+    prod_list[i].dealer[dealer_id].quantity -= quantity;
+    printf("Please Enter a review for the purchased product\n");
+    while ((getchar()) != '\n')
+        ;
+    scanf("%[^\n]s", users[curr_user].hist[i].review);
+
+    int rate = 0;
+    while (rate > 5 || rate < 1)
+    {
+        printf("Please Enter a Rate the product out of 5\n");
+        scanf("%d", &rate);
+        if (rate > 5 || rate < 1)
+        {
+            printf("Sorry this in an invalid rating. Please enter a rating out of 5.\n");
+        }
+        else
+        {
+            users[curr_user].hist[i].rating = rate;
+        }
+    }
+    recommend(curr_user, i);
+}
+void reorderDealers(int curr_user, PRODUCT curr_pro, int quant)
+{
+    int j = (curr_pro.ide_code % 10) + ((curr_pro.ide_code / 10) - 1) * 4 - 1;
+    sortDealer(prod_list[j].dealer, 0, 4);
+    sortDealer(curr_pro.dealer, 0, 4);
+    system("clear");
+    printf("Welcome to the market, %s\nChoose from the following dealers having respective quantities\n", users[curr_user].name);
+    if (quant <= curr_pro.dealer[4].quantity)
+    {
+        printf("-------------------------------\n");
+        printf("Sr. No.   Dealer Name    Quantity  \n");
+        for (int i = 4; i >= 0; i--)
+        {
+            if (quant <= curr_pro.dealer[i].quantity)
+                printf("%-10d%-15s%-10d\n", 5 - i, curr_pro.dealer[i].name, curr_pro.dealer[i].quantity);
+        }
+        printf("-------------------------------\n");
+        printf("enter number of the dealer that you wish to buy from. If you wish to go back to home page, enter 0\n");
+    }
+    else
+    {
+        printf("No dealers with required quantity. If you wish to buy from a mix of dealers to match your quantity, enter 6\nEnter 0 to exit to home page.\n");
+    }
+    int op;
+    scanf("%d", &op);
+    if (op == 0)
+    {
+        createMainPage();
+    }
+    else if (op == 6)
+    {
+        idConverter(curr_user, curr_pro.ide_code);
+    }
+    else
+    {
+        buyFromDealer(curr_user, curr_pro, 5 - op, quant);
+    }
+}
+
+void createReorderPage(int curr_user)
+{
+    system("clear");
+    printf("Welcome to the market, %s\nReorder a product from your past purchases\n", users[curr_user].name);
+    int reorder_length = 0, k = 0;
+    PRODUCT reorderArr[20];
+    printf("----------------------------------------------------\n");
+    printf("Sr. No.   Product Name        Brand Name     Price     \n");
+    for (int i = 0; i < 20; i++)
+    {
+        if (users[curr_user].hist[i].quantity != 0)
+        {
+            reorderArr[k] = prod_list[i];
+            reorder_length++;
+            printf("%-10d%-20s%-15s%-10d\n", k + 1, prod_list[i].prod_name, prod_list[i].brand, prod_list[i].price);
+            k++;
+        }
+    }
+    printf("----------------------------------------------------\n");
+    printf("enter number of the product that you wish to buy. If you wish to go back to previous page, enter 0\n");
+    int op;
+    scanf("%d", &op);
+    if (op == 0)
+    {
+        createMainPage(curr_user);
+    }
+    else
+    {
+        op--; //input by user is from 1 to n we want it from 0 to n-1
+        printf("Enter quantity you wish to purchase. Max quantity available is %d\n", reorderArr[op].stock);
+        int quant_purchase;
+        scanf("%d", &quant_purchase);
+        reorderDealers(curr_user, reorderArr[op], quant_purchase);
+    }
+}
+
 void createMainPage(int curr_user)
 {
     system("clear");
-    printf("Welcome to the market, %s\n1.View all products and offers\n2.search product\n3.logout\n", users[curr_user].name);
+    printf("Welcome to the market, %s\n1.View all products and offers\n2.search product\n3.Reorder product\n4.logout\n", users[curr_user].name);
     int op;
     scanf("%d", &op);
     if (op == 1)
@@ -492,6 +650,10 @@ void createMainPage(int curr_user)
     {
         createSearchPage(curr_user);
     }
+    else if (op == 3)
+    {
+        createReorderPage(curr_user);
+    }
     else
     {
         createHomePage();
@@ -500,30 +662,30 @@ void createMainPage(int curr_user)
 
 int validate(int curr_user)
 {
-    int flag=0;
-    if(strlen(users[curr_user].name)==0 || strcmp(users[curr_user].name,""==0))
+    int flag = 0;
+    if (strlen(users[curr_user].name) == 0 || strcmp(users[curr_user].name, "" == 0))
     {
-        flag=1;
+        flag = 1;
         printf("Please Enter a valid Name\n");
     }
-    
-    if(strlen(users[curr_user].password)<6)
+
+    if (strlen(users[curr_user].password) < 6)
     {
-        flag=1;
+        flag = 1;
         printf("Your password must be atleast 6 characters long. please Enter a valid password.\n");
     }
 
-    for(int i=0; i<curr_user; i++)
+    for (int i = 0; i < curr_user; i++)
     {
-        if(strcmp(users[i].id,users[curr_user].id)==0)
+        if (strcmp(users[i].id, users[curr_user].id) == 0)
         {
-            flag=1;
+            flag = 1;
             printf("This username has already been taken. Please Enter another username.\n");
-            i=curr_user;
+            i = curr_user;
         }
     }
 
-    if(flag==1)
+    if (flag == 1)
     {
         printf("You will have to refill the sign up form.\n");
         printf("----------------------------------------------------\n");
@@ -588,8 +750,8 @@ void createSignUpPage()
         ;
     scanf("%[^\n]s", users[num_users].address);
 
-    int valid=validate(num_users);
-    if(valid==0)
+    int valid = validate(num_users);
+    if (valid == 0)
     {
         num_users++;
         printf("Please select a valid option to continue \n1. continue with this account\n2. sign in to another account\n");
@@ -608,7 +770,6 @@ void createSignUpPage()
     {
         createSignUpPage();
     }
-    
 }
 
 void main()
